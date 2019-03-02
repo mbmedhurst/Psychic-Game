@@ -3,10 +3,11 @@ let losses = 0 // number of losses starts at 0
 let guessesLeft = 9 // number of remaining guesses starts at 9
 // alphabet array
 const alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-// function to choose a random letter
+// function to choose a random letter from the alphabet array
 let chooseLetter = _ => alphabet[Math.floor(Math.random() * alphabet.length)]
 // variable that is equal to running the function to choose a random letter
 let compLetter = chooseLetter()
+let playerGuess = [] // an empty array for storing letters guessed by playaer
 
 // I created a clear-all function even though I didn't end up putting a clear button on the page
 function gameClearAll () {
@@ -19,6 +20,7 @@ function gameClearAll () {
 // this is a function to restart the game once the player wins or runs out of guesses
 function restart () {
     guessesLeft = 9 // number of guesses reset to 9
+    playerGuess = [] // empties the player guess field
     compLetter = chooseLetter() // runs the function to choose another random letter
     console.log(compLetter) // logs the new random letter to the console so I can see what it is
     document.querySelector('#guessesLeft').textContent = (guessesLeft) // displays number of guesses on the screen
@@ -30,7 +32,8 @@ gameClearAll() // this is run when the page is re-loaded
 // this is the function for displaying the players key selection on the page - I could not figure out how to show all the guesses
 // currently each guess replaces the previous guess
 document.onkeyup = e => {
-    document.querySelector('#playerGuess').innerHTML = (e.key)
+    playerGuess.push(e.key) // adds items to the player guess array
+    document.querySelector('#playerGuess').innerHTML = playerGuess.join(' ') // adds latest guess to the player guess array on the screen
 
     // the logic starts here
     // I used a pretty simple if/else statement
