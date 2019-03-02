@@ -1,0 +1,26 @@
+/* Sorry, I didn't make much of an effort with the styling.
+I needed to spend the time working on the logic and then moving on to the hangman game. */
+
+body {
+    background-image: url(../images/060\ Polite\ Rumors.png);
+}
+
+header {
+    text-align: center;
+}
+
+p {
+    margin-left: 100px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    margin: 20px 100px;
+}
+
+.grid-item {
+    padding: 10px;
+    border: 1px dotted;
+}
