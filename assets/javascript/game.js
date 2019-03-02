@@ -20,11 +20,11 @@ function gameClearAll () {
 // this is a function to restart the game once the player wins or runs out of guesses
 function restart () {
     guessesLeft = 9 // number of guesses reset to 9
-    playerGuess = [] // empties the player guess field
+    playerGuess = [] // resets the value of the player guess - clears out guesses from previous round
     compLetter = chooseLetter() // runs the function to choose another random letter
     console.log(compLetter) // logs the new random letter to the console so I can see what it is
     document.querySelector('#guessesLeft').textContent = (guessesLeft) // displays number of guesses on the screen
-    document.querySelector('#playerGuess').textContent = ('') // clears the guesses so far field
+    document.querySelector('#playerGuess').textContent = ('') // clears the guesses so far field on screen
 }
 
 gameClearAll() // this is run when the page is re-loaded
