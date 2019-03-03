@@ -29,8 +29,7 @@ function restart () {
 
 gameClearAll() // this is run when the page is re-loaded
 
-// this is the function for displaying the players key selection on the page - I could not figure out how to show all the guesses
-// currently each guess replaces the previous guess
+// this is the function for displaying the players key selection on the page
 document.onkeyup = e => {
     playerGuess.push(e.key) // adds items to the player guess array
     document.querySelector('#playerGuess').innerHTML = playerGuess.join(' ') // adds latest guess to the player guess array on the screen
